@@ -27,10 +27,12 @@ export default function Contratar() {
             <br />
             <span className="text-accent">Você recebe direto.</span>
           </motion.h2>
-          <motion.p {...fadeUp(0.16)} className="mt-5 text-[15px] sm:text-[16px] text-muted leading-relaxed max-w-[540px]">
-            É o marketplace onde cliente e editor se encontram sem agência no
-            meio. A Editify não toca no seu dinheiro: o preço que você cobra cai
-            inteiro no seu PIX.
+          <motion.p {...fadeUp(0.16)} className="mt-5 text-[15px] sm:text-[16px] text-muted leading-relaxed max-w-[560px]">
+            A Editify tem uma plataforma de contratação só da casa: a{" "}
+            <span className="text-ink font-semibold">contratar.editify.com.br</span>.
+            O cliente busca pelo estilo que precisa, acha o seu Editfólio e fala
+            com você direto. Sem agência no meio e com 0% de comissão: o preço que
+            você cobra cai inteiro no seu PIX.
           </motion.p>
         </div>
 
@@ -67,12 +69,12 @@ export default function Contratar() {
               <span className="font-semibold text-ink">mural-de-ofertas</span>
             </div>
             <h3 className="mt-3 text-[19px] font-bold text-ink">
-              Tem cliente postando oferta toda hora
+              As ofertas aparecem no mural de ofertas
             </h3>
             <p className="mt-2 text-[14px] text-muted leading-relaxed max-w-lg">
-              Quem não quer procurar posta a vaga direto no Discord, em 20
-              segundos. Os editores interessados chamam no WhatsApp. Você só
-              precisa estar de olho.
+              Tem cliente que prefere postar a vaga direto. A oferta entra no
+              mural de ofertas, dentro do Discord, em 20 segundos. Os editores
+              interessados chamam no WhatsApp. Você só precisa ficar de olho.
             </p>
             <div className="mt-4 rounded-2xl bg-soft border border-line p-4">
               <p className="text-[13px] text-ink/80">

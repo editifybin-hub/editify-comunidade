@@ -46,7 +46,7 @@ export default function Erick() {
               {...fadeUp(0.08)}
               className="mt-4 font-[family-name:var(--font-display)] uppercase text-ink leading-[0.96] tracking-[-0.01em] text-[clamp(2rem,5.5vw,3.5rem)]"
             >
-              Toda semana,
+              Todo mês,
               <br />
               cara a cara comigo.
             </motion.h2>
@@ -71,17 +71,17 @@ export default function Erick() {
             {/* ao vivo + encontro */}
             <motion.div {...fadeUp(0.32)} className="mt-5 grid sm:grid-cols-2 gap-3 max-w-[520px]">
               <div className="rounded-2xl bg-accent-soft border border-accent/20 p-4 flex items-start gap-3">
-                <Video className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <CalendarHeart className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-ink text-[14px]">Aula ao vivo semanal</p>
-                  <p className="text-[12px] text-muted mt-0.5">Em call, com pergunta e resposta na hora. Não é gravação.</p>
+                  <p className="font-semibold text-ink text-[14px]">Encontro mensal ao vivo</p>
+                  <p className="text-[12px] text-muted mt-0.5">Uma vez por mês, em call comigo. Pergunta e resposta na hora, não é gravação.</p>
                 </div>
               </div>
               <div className="rounded-2xl bg-white border border-line p-4 flex items-start gap-3">
-                <CalendarHeart className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <Video className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-ink text-[14px]">Encontro com o Erick</p>
-                  <p className="text-[12px] text-muted mt-0.5">Mentoria 1 a 1 que você destrava com XP. Online ou presencial.</p>
+                  <p className="font-semibold text-ink text-[14px]">Mentoria 1 a 1</p>
+                  <p className="text-[12px] text-muted mt-0.5">Sessão individual que você destrava com XP. Online ou presencial.</p>
                 </div>
               </div>
             </motion.div>

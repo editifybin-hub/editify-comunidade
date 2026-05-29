@@ -1,38 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { DISCORD_URL, AVATARS } from "@/lib/site";
+import { DISCORD_URL } from "@/lib/site";
 import { DiscordIcon } from "./Icons";
+import AvatarMarquee from "./AvatarMarquee";
 
 export default function FinalCTA() {
-  const base = AVATARS.slice(0, 20);
-  const marquee = [...base, ...base];
-
   return (
     <section className="relative pt-10 pb-24 overflow-hidden">
-      {/* marquee de editores */}
-      <div
-        className="relative w-full overflow-hidden mb-16"
-        style={{
-          maskImage:
-            "linear-gradient(90deg, transparent, black 8%, black 92%, transparent)",
-        }}
-      >
-        <div
-          className="flex gap-3 w-max"
-          style={{ animation: "cmty-marquee 50s linear infinite", willChange: "transform" }}
-        >
-          {marquee.map((src, i) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              key={i}
-              src={src}
-              alt=""
-              className="w-12 h-12 rounded-full object-cover border border-line bg-soft shrink-0"
-            />
-          ))}
-        </div>
-      </div>
+      <AvatarMarquee className="mb-16" />
 
       <div className="relative max-w-3xl mx-auto px-4 md:px-6">
         <div

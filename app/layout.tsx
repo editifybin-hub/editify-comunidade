@@ -19,7 +19,7 @@ const bebasNeue = Bebas_Neue({
 export const metadata: Metadata = {
   title: "Comunidade Editify | Pare de editar sozinho",
   description:
-    "A casa do editor de vídeo brasileiro. Estúdio em voz, crítica de vídeo, IA pra responder cliente, portfólio profissional e marketplace sem comissão. Tudo num lugar só.",
+    "A casa do editor de vídeo brasileiro. Estúdio em voz, crítica de vídeo, IA pra responder cliente, portfólio profissional e plataforma de contratação sem comissão. Tudo num lugar só.",
   metadataBase: new URL("https://comunidade.editify.com.br"),
   icons: {
     icon: "/favicon.png",

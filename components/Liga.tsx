@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Crown, TrendingUp } from "lucide-react";
+import { Crown, TrendingUp, Gift } from "lucide-react";
 import { LIGAS } from "@/lib/site";
 
 const fadeUp = (delay: number) => ({
@@ -31,18 +31,20 @@ export default function Liga() {
             Toda venda que você fecha editando, você registra na comunidade com
             print do pagamento. A soma do mês te coloca numa liga, do{" "}
             <span className="text-ink font-semibold">Iniciante</span> ao{" "}
-            <span className="text-ink font-semibold">Elite</span>. Liga mais
-            alta significa mais visibilidade pro cliente, mais respeito na casa e
-            a prova de que seu trabalho tá crescendo de verdade.
+            <span className="text-ink font-semibold">Elite</span>. E quanto mais
+            alto você sobe,{" "}
+            <span className="text-ink font-semibold">melhores as recompensas que
+            você destrava</span>, mais visibilidade pro cliente e mais respeito na
+            casa.
           </motion.p>
         </div>
 
         {/* ── Timeline horizontal (desktop) ── */}
         <motion.div {...fadeUp(0.24)} className="mt-16 hidden md:block">
-          <div className="flex items-end justify-between mb-2 text-[12px] font-semibold text-muted">
-            <span>R$ 0</span>
-            <span className="text-ink/40">faturamento no mês</span>
-            <span>R$ 15.000+</span>
+          <div className="flex items-end justify-between mb-2.5 text-[14px] font-semibold text-muted">
+            <span className="text-ink/70">R$ 0</span>
+            <span className="text-ink/40 text-[12px] uppercase tracking-wide">faturamento no mês</span>
+            <span className="text-ink/70">R$ 15.000+</span>
           </div>
 
           {/* barra segmentada */}
@@ -63,19 +65,19 @@ export default function Liga() {
             {LIGAS.map((l) => {
               const isTop = "crown" in l && l.crown;
               return (
-                <div key={l.name} className="flex-1 px-1 text-center">
+                <div key={l.name} className="flex-1 px-1.5 text-center">
                   <span
-                    className="inline-block w-3 h-3 rounded-full -mt-[26px] relative z-10 border-2 border-[#f5f5f7]"
+                    className="inline-block w-3.5 h-3.5 rounded-full -mt-[27px] relative z-10 border-2 border-[#f5f5f7]"
                     style={{ background: l.color }}
                   />
-                  <div className="flex items-center justify-center gap-1.5 mt-1">
-                    <span className="font-[family-name:var(--font-display)] text-[18px] leading-none" style={{ color: l.color }}>
+                  <div className="flex items-center justify-center gap-1.5 mt-2">
+                    <span className="font-[family-name:var(--font-display)] text-[24px] leading-none" style={{ color: l.color }}>
                       {l.name}
                     </span>
-                    {isTop && <Crown className="w-4 h-4" style={{ color: l.color }} />}
+                    {isTop && <Crown className="w-[18px] h-[18px]" style={{ color: l.color }} />}
                   </div>
-                  <span className="block text-[11px] text-muted mt-1">{l.range}</span>
-                  <span className="block text-[11px] text-muted/70">{l.desc}</span>
+                  <span className="block text-[14px] font-semibold text-ink/80 mt-1.5">{l.range}</span>
+                  <span className="block text-[12px] text-muted mt-0.5">{l.desc}</span>
                 </div>
               );
             })}
@@ -115,22 +117,38 @@ export default function Liga() {
           </div>
         </div>
 
-        <motion.div
-          {...fadeUp(0.3)}
-          className="mt-14 flex flex-col sm:flex-row items-start gap-4 rounded-2xl bg-white border border-line p-6"
-        >
-          <span className="flex items-center justify-center w-11 h-11 rounded-xl bg-accent-soft text-accent shrink-0">
-            <TrendingUp className="w-5 h-5" />
-          </span>
-          <p className="text-[14px] sm:text-[15px] text-muted leading-relaxed">
-            <span className="text-ink font-semibold">Dia 1 de cada mês, zera.</span>{" "}
-            Todo mundo recomeça do mesmo ponto, e a corrida começa de novo. É o{" "}
-            <a href="https://lp.treinamento.editify.com.br" target="_blank" rel="noopener noreferrer" className="text-accent font-semibold hover:underline">
-              Treinamento Editify
-            </a>{" "}
-            que te dá o método pra fechar mais cliente e subir de liga rápido.
-          </p>
-        </motion.div>
+        <div className="mt-14 grid sm:grid-cols-2 gap-4">
+          <motion.div
+            {...fadeUp(0.3)}
+            className="flex items-start gap-4 rounded-2xl bg-white border border-line p-6"
+          >
+            <span className="flex items-center justify-center w-11 h-11 rounded-xl bg-accent-soft text-accent shrink-0">
+              <Gift className="w-5 h-5" />
+            </span>
+            <p className="text-[14px] sm:text-[15px] text-muted leading-relaxed">
+              <span className="text-ink font-semibold">Liga mais alta, recompensa melhor.</span>{" "}
+              Cada nível que você sobe destrava prêmios melhores na loja de XP:
+              estrelas no perfil, créditos de IA e mentoria. A Elite alcança tudo.
+            </p>
+          </motion.div>
+
+          <motion.div
+            {...fadeUp(0.38)}
+            className="flex items-start gap-4 rounded-2xl bg-white border border-line p-6"
+          >
+            <span className="flex items-center justify-center w-11 h-11 rounded-xl bg-accent-soft text-accent shrink-0">
+              <TrendingUp className="w-5 h-5" />
+            </span>
+            <p className="text-[14px] sm:text-[15px] text-muted leading-relaxed">
+              <span className="text-ink font-semibold">Dia 1 de cada mês, zera.</span>{" "}
+              Todo mundo recomeça do mesmo ponto. É o{" "}
+              <a href="https://lp.treinamento.editify.com.br" target="_blank" rel="noopener noreferrer" className="text-accent font-semibold hover:underline">
+                Treinamento Editify
+              </a>{" "}
+              que te dá o método pra subir de liga rápido.
+            </p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -37,8 +37,9 @@ export default function XpRewards() {
             transition={{ duration: 0.6, delay: 0.16 }}
             className="mt-5 text-[15px] sm:text-[16px] text-muted"
           >
-            XP é eterno e nunca reseta. Não compra acesso, compra status: estrelas
-            no perfil, créditos de IA e até mentoria com o Erick.
+            XP é eterno e nunca reseta: compra status, não acesso — estrelas no
+            perfil, créditos de IA e mentoria com o Erick. As recompensas mais
+            raras pedem também uma liga mínima: XP você junta, liga você conquista.
           </motion.p>
         </div>
 
@@ -82,24 +83,32 @@ export default function XpRewards() {
               <Gift className="w-5 h-5 text-accent" /> Troca por
             </h3>
             <div className="space-y-3">
-              {REWARDS.map((r) => (
-                <div
-                  key={r.label}
-                  className="rounded-2xl bg-white border border-line p-4 flex items-center gap-4 hover:border-accent/30 transition-colors"
-                >
-                  <div className="min-w-0">
-                    <p className="font-semibold text-ink text-[15px] leading-tight">
-                      {r.label}
-                    </p>
-                    <p className="text-[12px] text-muted mt-0.5">{r.desc}</p>
-                  </div>
-                  <span
-                    className="ml-auto shrink-0 rounded-full bg-accent-soft text-accent font-bold text-[12px] px-3 py-1.5 whitespace-nowrap"
+              {REWARDS.map((r) => {
+                const liga = "liga" in r ? r.liga : null;
+                return (
+                  <div
+                    key={r.label}
+                    className="rounded-2xl bg-white border border-line p-4 flex items-center gap-4 hover:border-accent/30 transition-colors"
                   >
-                    {r.xp}
-                  </span>
-                </div>
-              ))}
+                    <div className="min-w-0">
+                      <p className="font-semibold text-ink text-[15px] leading-tight">
+                        {r.label}
+                      </p>
+                      <p className="text-[12px] text-muted mt-0.5">{r.desc}</p>
+                    </div>
+                    <div className="ml-auto shrink-0 flex flex-col items-end gap-1.5">
+                      <span className="rounded-full bg-accent-soft text-accent font-bold text-[12px] px-3 py-1.5 whitespace-nowrap">
+                        {r.xp}
+                      </span>
+                      {liga && (
+                        <span className="inline-flex items-center rounded-full border border-line text-muted text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 whitespace-nowrap">
+                          Liga {liga}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </motion.div>
         </div>

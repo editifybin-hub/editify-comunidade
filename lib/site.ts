@@ -40,8 +40,8 @@ export const FEATURES = [
   },
   {
     icon: "video",
-    title: "Aula ao vivo semanal",
-    text: "Toda semana o Erick dá aula em call. Não é gravação, é cara a cara, com pergunta e resposta na hora.",
+    title: "Encontro ao vivo mensal",
+    text: "Todo mês o Erick dá aula em call. Não é gravação: é cara a cara, com pergunta e resposta na hora.",
   },
   {
     icon: "flame",
@@ -102,9 +102,9 @@ export const XP_SOURCES = [
 export const REWARDS = [
   { label: "Editfólio 2 Estrelas", xp: "2.000 XP", desc: "Prioridade nas buscas e tag de Match." },
   { label: "Editfólio 3 Estrelas", xp: "7.000 XP", desc: "Visibilidade máxima, badge Super match." },
-  { label: "Indicação Erick (3★ azul)", xp: "20.000 XP", desc: "Tier máximo, aprovação pessoal do Erick." },
-  { label: "Mentoria com Erick (1h)", xp: "22.222 XP", desc: "Chamada de 1h. Normalmente custa R$ 500." },
-  { label: "Mentoria presencial (1 dia)", xp: "2.222 XP", desc: "Dia inteiro com o Erick. Gate de Liga Elite." },
+  { label: "Indicação Erick (3★ azul)", xp: "20.000 XP", liga: "Pleno+", desc: "Tier máximo, aprovação pessoal do Erick." },
+  { label: "Mentoria com Erick (1h)", xp: "22.222 XP", liga: "Sênior+", desc: "Chamada de 1h. Normalmente custa R$ 500." },
+  { label: "Mentoria presencial (1 dia)", xp: "2.222 XP", liga: "Elite", desc: "Dia inteiro com o Erick, só pra liga Elite." },
   { label: "Pacote de IA", xp: "a partir de 1.800 XP", desc: "Créditos extras pra responder cliente." },
 ] as const;
 

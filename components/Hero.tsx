@@ -5,6 +5,7 @@ import { Hash, Volume2, Trophy } from "lucide-react";
 import { DISCORD_URL, AVATARS } from "@/lib/site";
 import { DiscordIcon } from "./Icons";
 import CommunityCounter from "./CommunityCounter";
+import AvatarMarquee from "./AvatarMarquee";
 
 const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 24 },
@@ -158,6 +159,7 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
+      <AvatarMarquee reverse className="mt-16 sm:mt-20" />
     </section>
   );
 }
