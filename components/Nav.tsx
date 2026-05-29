@@ -8,7 +8,7 @@ const LINKS = [
   { label: "Por dentro", href: "#por-dentro" },
   { label: "Liga", href: "#liga" },
   { label: "Recompensas", href: "#recompensas" },
-  { label: "Editfólio", href: "#editfolio" },
+  { label: "Contratação", href: "#editfolio" },
 ];
 
 export default function Nav() {

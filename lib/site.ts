@@ -110,11 +110,42 @@ export const REWARDS = [
 
 /** Tiers (estrelas no Editfólio, visíveis pro cliente) */
 export const TIERS = [
-  { stars: 1, color: "gold", label: "Editor Real", how: "Membro pagante da comunidade" },
-  { stars: 2, color: "gold", label: "Verificado", how: "Liga Pleno+ ou 2.000 XP" },
-  { stars: 3, color: "gold", label: "Reputação alta", how: "22.000 XP conquistados" },
-  { stars: 3, color: "blue", label: "Indicação Erick", how: "Aprovação pessoal do @erickjulrich" },
+  { stars: 1, color: "gold", label: "Editor Real", how: "Membro pagante da comunidade", unlock: "Entra no jogo e aparece nas buscas." },
+  { stars: 2, color: "gold", label: "Verificado", how: "Liga Pleno+ ou 2.000 XP", unlock: "Prioridade nas buscas e tag de Match." },
+  { stars: 3, color: "gold", label: "Reputação alta", how: "22.000 XP conquistados", unlock: "Visibilidade máxima e badge Super match." },
+  { stars: 3, color: "blue", label: "Indicação Erick", how: "Aprovação pessoal do @erickjulrich", unlock: "O selo mais raro da casa. Passou pelo teste do Erick." },
 ] as const;
+
+/** O que tem no Editfólio */
+export const EDITFOLIO_FEATURES = [
+  "Foto, nome e subtítulo (ex: Especialista em Retenção Viral)",
+  "Categorias de vídeo com seus trabalhos do YouTube embedados",
+  "Cor de destaque e tema claro ou escuro, do seu jeito",
+  "Botão de WhatsApp que abre conversa já preenchida",
+  "Depoimentos em vídeo dos seus clientes, estilo stories",
+  "Suas estrelas e tier aparecendo em tempo real",
+];
+
+/** Como o cliente te acha no contratar */
+export const CONTRATAR_STEPS = [
+  { n: "01", title: "O cliente busca", text: "Filtra por estilo (Reels, VSL, UGC), plataforma, tier, preço e prazo." },
+  { n: "02", title: "Acha o seu Editfólio", text: "Quanto mais estrelas, mais no topo você aparece, com tag de Match." },
+  { n: "03", title: "Chama no seu WhatsApp", text: "Conversa direta. 0% de comissão: o preço é seu, o PIX cai pra você." },
+];
+
+/** Tons da IA que responde cliente */
+export const IA_TONES = ["Padrão", "Firme", "Conciliador", "Contratual"];
+
+/** Autoridade do Erick */
+export const ERICK = {
+  name: "Erick Julrich",
+  photo: "/erick.jpg",
+  stats: [
+    { value: "R$2,2M+", label: "movimentados no mercado" },
+    { value: "+1.000", label: "editores formados" },
+    { value: "R$1M+", label: "faturados em agência gringa" },
+  ],
+};
 
 /** Avatares reais de editores pro counter / marquee */
 export const AVATARS = [

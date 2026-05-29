@@ -26,9 +26,9 @@ export default function XpRewards() {
             transition={{ duration: 0.6, delay: 0.08 }}
             className="mt-4 font-[family-name:var(--font-display)] uppercase text-ink leading-[0.96] tracking-[-0.01em] text-[clamp(2.25rem,6vw,4rem)]"
           >
-            Tudo que você faz
+            Você é recompensado
             <br />
-            <span className="text-accent">vira XP.</span>
+            <span className="text-accent">só por estar aqui.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
