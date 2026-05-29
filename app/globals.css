@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #0a0a0f;
+  --color-surface: #12121a;
+  --color-hairline: #20202c;
+  --color-text: #ffffff;
+  --color-muted: #9b9bb0;
+  --color-accent: #e30613;
+  --color-violet: #7c5cff;
+  --color-gold: #ffb800;
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-bebas);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* base distinta da home (que é preto chapado): gradiente vivo */
+  background:
+    radial-gradient(1200px 700px at 80% -5%, rgba(124, 92, 255, 0.12), transparent 60%),
+    radial-gradient(1000px 600px at 10% 5%, rgba(227, 6, 19, 0.12), transparent 55%),
+    #0a0a0f;
+  color: #ffffff;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes cmty-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
