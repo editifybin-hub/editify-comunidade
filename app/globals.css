@@ -1,20 +1,21 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-ink: #0a0a0f;
-  --color-surface: #12121a;
-  --color-hairline: #20202c;
-  --color-text: #ffffff;
-  --color-muted: #9b9bb0;
+  --color-bg: #ffffff;
+  --color-soft: #f5f5f7;
+  --color-ink: #0f0f14;
+  --color-muted: #6a6a76;
+  --color-line: #e7e7ec;
   --color-accent: #e30613;
-  --color-violet: #7c5cff;
-  --color-gold: #ffb800;
+  --color-accent-soft: #ffe9ea;
+  --color-gold: #f5a200;
+  --color-discord: #5865f2;
   --font-sans: var(--font-inter);
   --font-display: var(--font-bebas);
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
@@ -22,12 +23,12 @@ html {
 }
 
 body {
-  /* base distinta da home (que é preto chapado): gradiente vivo */
+  /* tema claro com leve respiro vermelho no topo (não chapado) */
   background:
-    radial-gradient(1200px 700px at 80% -5%, rgba(124, 92, 255, 0.12), transparent 60%),
-    radial-gradient(1000px 600px at 10% 5%, rgba(227, 6, 19, 0.12), transparent 55%),
-    #0a0a0f;
-  color: #ffffff;
+    radial-gradient(1100px 600px at 85% -8%, rgba(227, 6, 19, 0.06), transparent 60%),
+    radial-gradient(900px 500px at 5% 0%, rgba(227, 6, 19, 0.04), transparent 55%),
+    #ffffff;
+  color: #0f0f14;
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }

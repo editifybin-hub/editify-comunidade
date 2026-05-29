@@ -5,6 +5,7 @@ import {
   Bot,
   Video,
   Flame,
+  FolderOpen,
   type LucideIcon,
 } from "lucide-react";
 
@@ -23,6 +24,7 @@ const FEATURE_ICONS: Record<string, LucideIcon> = {
   bot: Bot,
   video: Video,
   flame: Flame,
+  folder: FolderOpen,
 };
 
 export function featureIcon(name: string): LucideIcon {

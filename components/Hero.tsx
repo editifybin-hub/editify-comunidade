@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Hash, Volume2, Trophy } from "lucide-react";
 import { DISCORD_URL, AVATARS } from "@/lib/site";
 import { DiscordIcon } from "./Icons";
+import CommunityCounter from "./CommunityCounter";
 
 const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 24 },
@@ -14,8 +15,6 @@ const fadeUp = (delay: number) => ({
     ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
   },
 });
-
-const HERO_AVATARS = AVATARS.slice(0, 6);
 
 const CHAT = [
   { name: "luccagarcez", av: "/avatars2/luccagarcez.webp", msg: "fechei cliente novo hoje 🤝", value: "R$ 3.000" },
@@ -35,28 +34,29 @@ export default function Hero() {
               href={DISCORD_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-violet/30 bg-violet/10 px-4 py-1.5 text-[12px] font-semibold text-white/80 hover:bg-violet/20 transition-colors"
+              className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent-soft px-4 py-1.5 text-[12px] font-semibold text-accent hover:bg-accent/10 transition-colors"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-violet animate-pulse" />
+              <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
               Comunidade no Discord
             </motion.a>
 
             <motion.h1
               {...fadeUp(0.15)}
-              className="mt-6 font-[family-name:var(--font-display)] uppercase text-white leading-[0.92] tracking-[-0.01em] text-[clamp(2.85rem,7.5vw,5.5rem)]"
+              className="mt-6 font-[family-name:var(--font-display)] uppercase text-ink leading-[0.92] tracking-[-0.01em] text-[clamp(2.85rem,7.5vw,5.75rem)]"
             >
-              Pare de editar
+              Editar sozinho
               <br />
-              <span className="text-accent">sozinho.</span>
+              <span className="text-accent">é muito chato.</span>
             </motion.h1>
 
             <motion.p
               {...fadeUp(0.3)}
-              className="mt-6 max-w-[520px] text-[16px] sm:text-[18px] leading-relaxed text-muted"
+              className="mt-6 max-w-[540px] text-[16px] sm:text-[18px] leading-relaxed text-muted"
             >
-              A casa do editor de vídeo brasileiro. Estúdio em voz, crítica de
-              vídeo, IA pra responder cliente e portfólio profissional. Tudo num
-              lugar só.
+              A comunidade Editify é onde o editor de vídeo brasileiro vira
+              profissional.
+              <br className="hidden sm:block" />{" "}
+              Treinamento, ferramentas e clientes no mesmo lugar.
             </motion.p>
 
             <motion.div {...fadeUp(0.45)} className="mt-8 flex flex-col sm:flex-row items-center gap-3">
@@ -67,7 +67,7 @@ export default function Hero() {
                 className="group inline-flex w-full sm:w-auto items-center justify-center gap-2.5 text-white font-bold text-[15px] uppercase tracking-wider px-8 py-[18px] rounded-full transition-all duration-300 hover:-translate-y-0.5"
                 style={{
                   background: "#5865F2",
-                  boxShadow: "0 12px 36px rgba(88,101,242,0.4)",
+                  boxShadow: "0 12px 36px rgba(88,101,242,0.35)",
                 }}
               >
                 <DiscordIcon className="w-5 h-5" />
@@ -75,61 +75,43 @@ export default function Hero() {
               </a>
               <a
                 href="#por-dentro"
-                className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-[18px] rounded-full border border-white/12 text-white/80 font-medium text-[15px] hover:bg-white/5 hover:text-white transition-all"
+                className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-[18px] rounded-full border border-line text-ink/75 font-medium text-[15px] hover:bg-soft hover:text-ink transition-all"
               >
                 Ver por dentro
               </a>
             </motion.div>
 
-            <motion.div {...fadeUp(0.6)} className="mt-8 flex items-center gap-3">
-              <div className="flex -space-x-3">
-                {HERO_AVATARS.map((src) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    key={src}
-                    src={src}
-                    alt=""
-                    className="w-9 h-9 rounded-full border-2 border-ink object-cover bg-surface"
-                  />
-                ))}
-              </div>
-              <p className="text-[13px] text-muted">
-                Centenas de editores já tão dentro
-              </p>
+            <motion.div {...fadeUp(0.6)} className="mt-8">
+              <CommunityCounter />
             </motion.div>
           </div>
 
-          {/* RIGHT — mockup de Discord */}
-          <motion.div
-            {...fadeUp(0.4)}
-            className="relative"
-          >
+          {/* RIGHT — mockup de Discord (claro) */}
+          <motion.div {...fadeUp(0.4)} className="relative">
             <div
-              className="relative rounded-2xl overflow-hidden flex"
+              className="relative rounded-2xl overflow-hidden flex bg-white"
               style={{
-                background: "#12121a",
-                border: "1px solid rgba(255,255,255,0.1)",
-                boxShadow: "0 40px 100px rgba(0,0,0,0.6), 0 0 60px rgba(124,92,255,0.1)",
+                border: "1px solid rgba(15,15,20,0.1)",
+                boxShadow: "0 40px 100px rgba(15,15,20,0.14)",
               }}
             >
               {/* rail de canais */}
-              <div className="hidden sm:flex flex-col items-center gap-3 py-5 px-3 bg-black/30 border-r border-white/5">
+              <div className="hidden sm:flex flex-col items-center gap-3 py-5 px-3 bg-soft border-r border-line">
                 <div className="w-10 h-10 rounded-2xl bg-accent flex items-center justify-center">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/icon.png" alt="" className="w-6 h-6 object-contain" />
                 </div>
-                <div className="w-8 h-px bg-white/10" />
+                <div className="w-8 h-px bg-line" />
                 {[0, 1, 2].map((i) => (
-                  <div key={i} className="w-10 h-10 rounded-2xl bg-white/5" />
+                  <div key={i} className="w-10 h-10 rounded-2xl bg-ink/5" />
                 ))}
               </div>
 
               {/* conteúdo */}
               <div className="flex-1 min-w-0">
-                {/* lista de canais */}
-                <div className="px-4 py-3 border-b border-white/5 flex items-center gap-2 text-white/50 text-[13px]">
+                <div className="px-4 py-3 border-b border-line flex items-center gap-2 text-muted text-[13px]">
                   <Hash className="w-4 h-4" />
-                  <span className="text-white font-semibold">mural-de-conquistas</span>
+                  <span className="text-ink font-semibold">mural-de-conquistas</span>
                 </div>
 
                 <div className="px-4 py-4 space-y-4">
@@ -142,24 +124,18 @@ export default function Hero() {
                       className="flex gap-3"
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={c.av}
-                        alt=""
-                        className="w-9 h-9 rounded-full object-cover bg-surface shrink-0"
-                      />
+                      <img src={c.av} alt="" className="w-9 h-9 rounded-full object-cover bg-soft shrink-0" />
                       <div className="min-w-0">
                         <p className="text-[13px]">
-                          <span className="font-semibold text-white">{c.name}</span>{" "}
-                          <span className="text-white/30 text-[11px]">hoje</span>
+                          <span className="font-semibold text-ink">{c.name}</span>{" "}
+                          <span className="text-muted/60 text-[11px]">hoje</span>
                         </p>
-                        <p className="text-[14px] text-white/80">{c.msg}</p>
+                        <p className="text-[14px] text-ink/80">{c.msg}</p>
                         {c.value && (
-                          <div className="mt-2 inline-flex items-center gap-2 rounded-lg bg-accent/12 border border-accent/25 px-3 py-1.5">
+                          <div className="mt-2 inline-flex items-center gap-2 rounded-lg bg-accent-soft border border-accent/20 px-3 py-1.5">
                             <Trophy className="w-3.5 h-3.5 text-accent" />
-                            <span className="text-[13px] font-bold text-white">
-                              {c.value}
-                            </span>
-                            <span className="text-[11px] text-white/50">conquista</span>
+                            <span className="text-[13px] font-bold text-ink">{c.value}</span>
+                            <span className="text-[11px] text-muted">conquista</span>
                           </div>
                         )}
                       </div>
@@ -167,14 +143,13 @@ export default function Hero() {
                   ))}
                 </div>
 
-                {/* estúdio de voz */}
-                <div className="px-4 py-3 border-t border-white/5 flex items-center gap-2 text-white/60 text-[13px]">
-                  <Volume2 className="w-4 h-4 text-green-400" />
+                <div className="px-4 py-3 border-t border-line flex items-center gap-2 text-muted text-[13px]">
+                  <Volume2 className="w-4 h-4 text-green-500" />
                   <span>Estúdio 01</span>
                   <span className="ml-auto flex -space-x-2">
                     {AVATARS.slice(6, 10).map((src) => (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img key={src} src={src} alt="" className="w-6 h-6 rounded-full border-2 border-surface object-cover" />
+                      <img key={src} src={src} alt="" className="w-6 h-6 rounded-full border-2 border-white object-cover" />
                     ))}
                   </span>
                 </div>

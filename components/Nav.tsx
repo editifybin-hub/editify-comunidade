@@ -6,8 +6,9 @@ import { DiscordIcon } from "./Icons";
 
 const LINKS = [
   { label: "Por dentro", href: "#por-dentro" },
-  { label: "Progresso", href: "#progresso" },
-  { label: "Ecossistema", href: "#ecossistema" },
+  { label: "Liga", href: "#liga" },
+  { label: "Recompensas", href: "#recompensas" },
+  { label: "Editfólio", href: "#editfolio" },
 ];
 
 export default function Nav() {
@@ -25,17 +26,16 @@ export default function Nav() {
       <header
         className="mx-auto max-w-6xl rounded-full transition-all duration-300"
         style={{
-          background: scrolled ? "rgba(18,18,26,0.82)" : "rgba(18,18,26,0.5)",
+          background: scrolled ? "rgba(255,255,255,0.85)" : "rgba(255,255,255,0.6)",
           backdropFilter: "blur(20px)",
           WebkitBackdropFilter: "blur(20px)",
-          border: "1px solid rgba(255,255,255,0.08)",
+          border: "1px solid rgba(15,15,20,0.08)",
           boxShadow: scrolled
-            ? "0 20px 60px rgba(0,0,0,0.5), 0 0 30px rgba(124,92,255,0.08)"
+            ? "0 12px 40px rgba(15,15,20,0.08)"
             : "none",
         }}
       >
         <div className="flex items-center justify-between gap-4 px-4 sm:px-5 h-[56px] sm:h-[62px]">
-          {/* brand: ícone + "/ comunidade" pra sinalizar que é outro site */}
           <a href="#top" aria-label="Comunidade Editify" className="shrink-0 inline-flex items-center gap-2.5">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -43,19 +43,19 @@ export default function Nav() {
               alt="Editify"
               width={34}
               height={34}
-              className="h-8 w-8 object-contain"
+              className="h-8 w-8 object-contain invert"
             />
-            <span className="hidden sm:inline text-[15px] font-semibold text-white/55 leading-none">
-              <span className="text-white/30">/ </span>comunidade
+            <span className="hidden sm:inline text-[15px] font-semibold text-ink/55 leading-none">
+              <span className="text-ink/30">/ </span>comunidade
             </span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-7">
             {LINKS.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="text-[14px] font-medium text-white/70 hover:text-white transition-colors"
+                className="text-[14px] font-medium text-ink/65 hover:text-ink transition-colors"
               >
                 {l.label}
               </a>
@@ -69,7 +69,7 @@ export default function Nav() {
             className="shrink-0 inline-flex items-center gap-2 text-white text-[12px] sm:text-[13px] font-bold uppercase tracking-[0.06em] px-4 sm:px-5 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-px"
             style={{
               background: "#5865F2",
-              boxShadow: "0 8px 24px rgba(88,101,242,0.4)",
+              boxShadow: "0 8px 24px rgba(88,101,242,0.3)",
             }}
           >
             <DiscordIcon className="w-4 h-4" />

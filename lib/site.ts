@@ -5,6 +5,8 @@
 
 export const DISCORD_URL = "https://discord.gg/8cJNpdr2nQ";
 
+export const EDITOR_COUNT = 1000;
+
 /** Recados de boas-vindas (cultura caseira) */
 export const WELCOME_LINES = [
   "A casa é sua. Bem-vindo, irmão.",
@@ -14,7 +16,7 @@ export const WELCOME_LINES = [
   "Aqui tem sempre um prato a mais.",
 ];
 
-/** O que tem dentro (estilo Discord, bento) */
+/** O que tem dentro (grupo de editores) */
 export const FEATURES = [
   {
     icon: "mic",
@@ -48,13 +50,62 @@ export const FEATURES = [
   },
 ] as const;
 
-/** Liga (faturamento mensal) */
+/**
+ * Liga (faturamento mensal). Cores atribuídas como ramp de prestígio
+ * (o brief não trazia cores; ajuste se tiver as oficiais).
+ */
 export const LIGAS = [
-  { name: "Iniciante", value: "R$ 1+", desc: "Primeiro cliente já veio" },
-  { name: "Júnior", value: "R$ 1.000+", desc: "Base sólida" },
-  { name: "Pleno", value: "R$ 2.500+", desc: "Profissional estabelecido" },
-  { name: "Sênior", value: "R$ 7.500+", desc: "Referência no ofício" },
-  { name: "Elite", value: "R$ 15.000+", desc: "Top 1% da casa", crown: true },
+  {
+    name: "Iniciante",
+    range: "R$ 1 a R$ 999",
+    desc: "Primeiro cliente já veio",
+    color: "#8b94a3",
+  },
+  {
+    name: "Júnior",
+    range: "R$ 1.000 a R$ 2.499",
+    desc: "Base sólida",
+    color: "#22c55e",
+  },
+  {
+    name: "Pleno",
+    range: "R$ 2.500 a R$ 7.499",
+    desc: "Profissional estabelecido",
+    color: "#3b82f6",
+  },
+  {
+    name: "Sênior",
+    range: "R$ 7.500 a R$ 14.999",
+    desc: "Referência no ofício",
+    color: "#f5a200",
+  },
+  {
+    name: "Elite",
+    range: "R$ 15.000+",
+    desc: "Top 1% da casa",
+    color: "#e30613",
+    crown: true,
+  },
+] as const;
+
+/** Como ganha XP (fontes principais) */
+export const XP_SOURCES = [
+  { icon: "mic", label: "Estúdio em voz", value: "2 XP / min" },
+  { icon: "trophy", label: "Conquista registrada", value: "100+ XP" },
+  { icon: "scissors", label: "Crítica dada", value: "15 XP" },
+  { icon: "flame", label: "Treino diário", value: "30 XP" },
+  { icon: "video", label: "Evento ao vivo", value: "100 XP" },
+  { icon: "folder", label: "Editfólio publicado", value: "1.000 XP" },
+] as const;
+
+/** Loja de recompensas (XP vira coisa real) */
+export const REWARDS = [
+  { label: "Editfólio 2 Estrelas", xp: "2.000 XP", desc: "Prioridade nas buscas e tag de Match." },
+  { label: "Editfólio 3 Estrelas", xp: "7.000 XP", desc: "Visibilidade máxima, badge Super match." },
+  { label: "Indicação Erick (3★ azul)", xp: "20.000 XP", desc: "Tier máximo, aprovação pessoal do Erick." },
+  { label: "Mentoria com Erick (1h)", xp: "22.222 XP", desc: "Chamada de 1h. Normalmente custa R$ 500." },
+  { label: "Mentoria presencial (1 dia)", xp: "2.222 XP", desc: "Dia inteiro com o Erick. Gate de Liga Elite." },
+  { label: "Pacote de IA", xp: "a partir de 1.800 XP", desc: "Créditos extras pra responder cliente." },
 ] as const;
 
 /** Tiers (estrelas no Editfólio, visíveis pro cliente) */
@@ -65,33 +116,7 @@ export const TIERS = [
   { stars: 3, color: "blue", label: "Indicação Erick", how: "Aprovação pessoal do @erickjulrich" },
 ] as const;
 
-/** As 3 frentes do ecossistema (visão do membro) */
-export const ECOSYSTEM = [
-  {
-    tag: "Discord",
-    title: "A Comunidade",
-    text: "Onde os editores vivem o dia a dia. Estúdios de voz, murais de conquista, crítica, eventos ao vivo. A casa.",
-  },
-  {
-    tag: "folio.editify.com.br",
-    title: "O Editfólio",
-    text: "Seu portfólio profissional sem código, sem domínio, sem dor de cabeça. Pronto em 5 minutos e com suas estrelas em tempo real.",
-  },
-  {
-    tag: "contratar.editify.com.br",
-    title: "O Contratar",
-    text: "Marketplace onde o cliente te acha e chama no seu WhatsApp. 0% de comissão: o preço que você cobra é o que você recebe.",
-  },
-] as const;
-
-/** Diferenciais por contraste */
-export const NOT_US = [
-  { not: "Não somos curso", yes: "A gente é depois do curso. Você já sabe editar, aqui aprende a ser pago como gente." },
-  { not: "Não somos agência", yes: "Não tomamos comissão. O cliente paga você direto no PIX." },
-  { not: "Não somos grupo de WhatsApp", yes: "Tem estrutura, progresso medido, ranking e ferramentas reais." },
-] as const;
-
-/** Avatares reais de editores pro marquee */
+/** Avatares reais de editores pro counter / marquee */
 export const AVATARS = [
   "_g.o.s.webp", "acerola7435.webp", "alexandre051473.webp", "alvesdrj.webp",
   "andersonbarbozaa.webp", "arth.editor.webp", "beza1.webp", "brumviews.webp",

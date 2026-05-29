@@ -14,7 +14,7 @@ export default function Features() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
-            className="text-[11px] font-bold tracking-[0.3em] uppercase text-violet"
+            className="text-[11px] font-bold tracking-[0.3em] uppercase text-accent"
           >
             Por dentro da casa
           </motion.p>
@@ -23,12 +23,22 @@ export default function Features() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.08 }}
-            className="mt-4 font-[family-name:var(--font-display)] uppercase text-white leading-[0.96] tracking-[-0.01em] text-[clamp(2.25rem,6vw,4rem)]"
+            className="mt-4 font-[family-name:var(--font-display)] uppercase text-ink leading-[0.96] tracking-[-0.01em] text-[clamp(2.25rem,6vw,4rem)]"
           >
-            Não é grupo de Discord.
+            Grupo de editores
             <br />
-            <span className="text-accent">É lugar de trabalhar.</span>
+            <span className="text-accent">pra trabalho e progresso.</span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.16 }}
+            className="mt-5 text-[15px] sm:text-[16px] text-muted max-w-[520px]"
+          >
+            Tudo que você já faria editando, só que com gente do lado, ferramenta
+            de verdade e cada passo virando reputação.
+          </motion.p>
         </div>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -41,28 +51,13 @@ export default function Features() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
-                className="group relative rounded-3xl p-7 overflow-hidden transition-all duration-300 hover:-translate-y-1"
-                style={{
-                  background: "linear-gradient(180deg, #14141d 0%, #0c0c12 100%)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                }}
+                className="group relative rounded-3xl p-7 bg-white border border-line transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(15,15,20,0.1)] hover:border-accent/30"
               >
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute -top-16 -right-10 w-56 h-56 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background:
-                      "radial-gradient(circle, rgba(124,92,255,0.22) 0%, transparent 70%)",
-                    filter: "blur(24px)",
-                  }}
-                />
-                <div className="relative flex items-center justify-center w-12 h-12 rounded-xl bg-violet/12 text-violet">
-                  <Icon className="w-6 h-6" strokeWidth={1.8} />
+                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-accent-soft text-accent">
+                  <Icon className="w-6 h-6" strokeWidth={1.9} />
                 </div>
-                <h3 className="relative mt-5 text-[19px] font-bold text-white">
-                  {f.title}
-                </h3>
-                <p className="relative mt-2 text-[14px] leading-relaxed text-muted">
+                <h3 className="mt-5 text-[19px] font-bold text-ink">{f.title}</h3>
+                <p className="mt-2 text-[14px] leading-relaxed text-muted">
                   {f.text}
                 </p>
               </motion.div>
