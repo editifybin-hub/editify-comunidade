@@ -59,31 +59,31 @@ export const LIGAS = [
     name: "Iniciante",
     range: "R$ 1 a R$ 999",
     desc: "Primeiro cliente já veio",
-    color: "#8b94a3",
+    color: "#7cb3e8", // azul claro
   },
   {
     name: "Júnior",
     range: "R$ 1.000 a R$ 2.499",
     desc: "Base sólida",
-    color: "#22c55e",
+    color: "#5fc36e", // verde
   },
   {
     name: "Pleno",
     range: "R$ 2.500 a R$ 7.499",
     desc: "Profissional estabelecido",
-    color: "#3b82f6",
+    color: "#4178e6", // azul
   },
   {
     name: "Sênior",
     range: "R$ 7.500 a R$ 14.999",
     desc: "Referência no ofício",
-    color: "#f5a200",
+    color: "#ab50df", // roxo
   },
   {
     name: "Elite",
     range: "R$ 15.000+",
     desc: "Top 1% da casa",
-    color: "#e30613",
+    color: "#f59428", // laranja/dourado
     crown: true,
   },
 ] as const;
